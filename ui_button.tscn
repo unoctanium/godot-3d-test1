@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhkqq03leuve0"]
+
+[ext_resource type="Texture2D" uid="uid://dv67j5fovuyei" path="res://addons/kenney_onscreen-controls/Sprites/flat-light/flatLight34.png" id="1_gmrfg"]
+[ext_resource type="Script" path="res://ui_button.gd" id="1_ro7nv"]
+
+[node name="UIButton" type="TextureButton"]
+custom_minimum_size = Vector2(160, 160)
+offset_right = 80.0
+offset_bottom = 80.0
+action_mode = 0
+texture_normal = ExtResource("1_gmrfg")
+stretch_mode = 0
+script = ExtResource("1_ro7nv")

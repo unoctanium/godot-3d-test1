@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cliebrdyinfxx"]
+
+[ext_resource type="PackedScene" uid="uid://vkd8wi4xfup0" path="res://player.tscn" id="1_4u3rc"]
+[ext_resource type="PackedScene" uid="uid://bje0i4njns3bp" path="res://block.tscn" id="2_c8vum"]
+[ext_resource type="PackedScene" uid="uid://bivg7odtgqf4q" path="res://ui.tscn" id="3_v4fls"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ug0wo"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gok2c"]
+size = Vector3(20, 0.5, 20)
+
+[node name="Level1" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.832931, 0.553377, 0, -0.553377, 0.832931, 0, 3.74056, 2.3331)
+
+[node name="Player" parent="." instance=ExtResource("1_4u3rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+mesh = SubResource("BoxMesh_ug0wo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_gok2c")
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("2_c8vum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55101, -3.6505)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("2_c8vum")]
+transform = Transform3D(0.754426, 0.413667, 0.509629, -0.488296, 0.872556, 0.0145912, -0.438644, -0.259858, 0.860271, 0.445797, 4.85487, -5.2404)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("2_c8vum")]
+transform = Transform3D(0.755488, 0.655163, 0, -0.655163, 0.755488, 0, 0, 0, 1, -1.32889, 4.21298, -5.1408)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("2_c8vum")]
+transform = Transform3D(0.325124, 0.723124, -0.609415, -0.227706, 0.685328, 0.69172, 0.917848, -0.0861274, 0.387476, 0.684975, 6.63151, -5.61029)
+
+[node name="UI" parent="." instance=ExtResource("3_v4fls")]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bivg7odtgqf4q"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick_scene.tscn" id="1_5jnu7"]
+[ext_resource type="PackedScene" uid="uid://bhkqq03leuve0" path="res://ui_button.tscn" id="2_1qa8l"]
+
+[sub_resource type="GDScript" id="GDScript_q3lul"]
+script/source = "extends CanvasLayer
+
+
+
+# Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#pass
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(_delta: float) -> void:
+	#pass
+"
+
+[node name="UI" type="CanvasLayer"]
+script = SubResource("GDScript_q3lul")
+
+[node name="StickLeft" parent="." instance=ExtResource("1_5jnu7")]
+custom_minimum_size = Vector2(200, 200)
+offset_top = -380.0
+offset_right = 780.0
+offset_bottom = 0.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+joystick_mode = 1
+action_left = "uia_sleft"
+action_right = "uia_sright"
+action_up = "uia_sforward"
+action_down = "uia_sback"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(800, 400)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -220.0
+offset_right = 220.0
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="UIButtonJump" parent="." instance=ExtResource("2_1qa8l")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -640.0
+offset_right = -40.0
+offset_bottom = -480.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+input_action = &"uia_jump"

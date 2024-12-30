@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="3d2"
+run/main_scene="res://level1.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[input]
+
+uia_jump={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+])
+}
+uia_sleft={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+])
+}
+uia_sright={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+])
+}
+uia_sforward={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+])
+}
+uia_sback={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+])
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
+
+[xogot]
+
+project/editorState=[]
+project/breakpoints={
+"res://addons/virtual_joystick/virtual_joystick.gd": PackedInt32Array(),
+"res://camera_cotroller.gd": PackedInt32Array(),
+"res://player.gd": PackedInt32Array(),
+"res://ui_button.gd": PackedInt32Array()
+}

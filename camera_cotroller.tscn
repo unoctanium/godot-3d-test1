@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://btw1xe7wbqv1m"]
+
+[ext_resource type="Script" path="res://camera_cotroller.gd" id="1_d6336"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v45el"]
+margin = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_qh703"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lhht8"]
+
+[node name="CameraController" type="Node3D"]
+script = ExtResource("1_d6336")
+input_action_doubletapped = "uia_jump"
+
+[node name="CameraPan" type="Node3D" parent="."]
+
+[node name="CameraTilt" type="Node3D" parent="CameraPan"]
+transform = Transform3D(1, 0, 0, 0, 0.95255, 0.304382, 0, -0.304382, 0.95255, 0, 0.45, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPan/CameraTilt"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.28694e-09, 0, 3.89976e-10, 1, -1.07815e-07, -2.84684e-08, 0.545252)
+shape = SubResource("SphereShape3D_v45el")
+spring_length = 4.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="CameraPan/CameraTilt/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.95513e-08, 0, -5.63864e-08, 1, 6.21349e-09, 0, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_qh703")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.809857, 0, 0, 0, -2.20949e-08, -0.505472, 0, 0.505472, -2.20949e-08, 0, 9.37292e-09, -0.214428)
+mesh = SubResource("CylinderMesh_lhht8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30147, 0.923625)
+visible = false
